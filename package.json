@@ -1,0 +1,49 @@
+{
+  "name": "@uniformdev/optimize-starter-contentful-gatsby",
+  "version": "4.0.1",
+  "private": true,
+  "eslintIgnore": [
+    "../../packages/**/dist/**/*.js"
+  ],
+  "description": "Uniform Gatsby starter site for contentful",
+  "scripts": {
+    "build": "run-s generate:intents clean build:gatsby",
+    "develop": "run-s generate:intents develop:gatsby",
+    "build:gatsby": "gatsby build",
+    "develop:gatsby": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "generate:intents": "uniform optimize manifest download --output ./src/lib/intentManifest.json --apiKey $UNIFORM_API_KEY",
+    "ci:build": "run-s generate:intents clean build:gatsby"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@analytics/google-analytics": "^0.5.2",
+    "@analytics/segment": "^0.6.0",
+    "@n8tb1t/use-scroll-position": "^2.0.3",
+    "@uniformdev/optimize-tracker-analytics": "^4.0.1",
+    "@uniformdev/optimize-tracker-browser": "^4.0.1",
+    "@uniformdev/optimize-tracker-contentful": "^4.0.1",
+    "@uniformdev/optimize-tracker-react": "^4.0.1",
+    "analytics": "^0.7.2",
+    "dotenv": "^8.2.0",
+    "gatsby": "2.32.4",
+    "gatsby-plugin-postcss": "^3.6.0",
+    "gatsby-plugin-react-helmet": "^3.9.0",
+    "gatsby-source-contentful": "^4.5.2",
+    "js-cookie": "^2.2.1",
+    "postcss": "^8.2.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@uniformdev/cli": "^4.0.1",
+    "gatsby-cli": "2.19.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.2.1",
+    "tailwindcss": "^2.0.2"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "use": "@vercel/static-build",
+      "src": "package.json",
+      "config": {
+        "zeroConfig": true,
+        "framework": "gatsby",
+        "buildCommand": "yarn build",
+        "outputDirectory": "public",
+        "rootDirectory": "./"
+      }
+    }
+  ]
+}
